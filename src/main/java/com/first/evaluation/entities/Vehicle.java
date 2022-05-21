@@ -22,6 +22,18 @@ public class Vehicle {
     @Column(name = "km")
     private Double km;
 
+    public Vehicle() {
+    }
+
+
+    public Vehicle(String id, Type idtype, String mark, String model, Double km) {
+        this.id = id;
+        this.idtype = idtype;
+        this.mark = mark;
+        this.model = model;
+        this.km = km;
+    }
+
     public Double getKm() {
         return km;
     }

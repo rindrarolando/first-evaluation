@@ -1,11 +1,11 @@
 package com.first.evaluation.entities;
 
 import javax.persistence.*;
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "trajectory")
-public class Trajectory {
+@Table(name = "departure")
+public class Departure {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -23,7 +23,7 @@ public class Trajectory {
     private String motif;
 
     @Column(name = "departure_time")
-    private Instant departureTime;
+    private LocalDateTime departureTime;
 
     @Column(name = "departure_place")
     private String departurePlace;
@@ -31,28 +31,16 @@ public class Trajectory {
     @Column(name = "departure_km")
     private Double departureKm;
 
-    @Column(name = "arrival_time")
-    private Instant arrivalTime;
-
-    @Column(name = "arrival_place")
-    private String arrivalPlace;
-
-    @Column(name = "arrival_km")
-    private Double arrivalKm;
-
     @Column(name = "fuel_price")
     private Double fuelPrice;
 
     @Column(name = "fuel_quantity")
     private Double fuelQuantity;
 
-    @Column(name = "status")
-    private Boolean status;
-
-    public Trajectory() {
+    public Departure() {
     }
 
-    public Trajectory(Integer id, Vehicle numbervehicle, Driver iddriver, String motif, Instant departureTime, String departurePlace, Double departureKm, Instant arrivalTime, String arrivalPlace, Double arrivalKm, Double fuelPrice, Double fuelQuantity, Boolean status) {
+    public Departure(Integer id, Vehicle numbervehicle, Driver iddriver, String motif, LocalDateTime departureTime, String departurePlace, Double departureKm, Double fuelPrice, Double fuelQuantity) {
         this.id = id;
         this.numbervehicle = numbervehicle;
         this.iddriver = iddriver;
@@ -60,32 +48,8 @@ public class Trajectory {
         this.departureTime = departureTime;
         this.departurePlace = departurePlace;
         this.departureKm = departureKm;
-        this.arrivalTime = arrivalTime;
-        this.arrivalPlace = arrivalPlace;
-        this.arrivalKm = arrivalKm;
         this.fuelPrice = fuelPrice;
         this.fuelQuantity = fuelQuantity;
-        this.status = status;
-    }
-
-    public Trajectory(Vehicle numbervehicle, Driver iddriver, String motif, Instant departureTime, String departurePlace, Double departureKm, Double fuelPrice, Double fuelQuantity, Boolean status) {
-        this.numbervehicle = numbervehicle;
-        this.iddriver = iddriver;
-        this.motif = motif;
-        this.departureTime = departureTime;
-        this.departurePlace = departurePlace;
-        this.departureKm = departureKm;
-        this.fuelPrice = fuelPrice;
-        this.fuelQuantity = fuelQuantity;
-        this.status = status;
-    }
-
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
     }
 
     public Double getFuelQuantity() {
@@ -104,30 +68,6 @@ public class Trajectory {
         this.fuelPrice = fuelPrice;
     }
 
-    public Double getArrivalKm() {
-        return arrivalKm;
-    }
-
-    public void setArrivalKm(Double arrivalKm) {
-        this.arrivalKm = arrivalKm;
-    }
-
-    public String getArrivalPlace() {
-        return arrivalPlace;
-    }
-
-    public void setArrivalPlace(String arrivalPlace) {
-        this.arrivalPlace = arrivalPlace;
-    }
-
-    public Instant getArrivalTime() {
-        return arrivalTime;
-    }
-
-    public void setArrivalTime(Instant arrivalTime) {
-        this.arrivalTime = arrivalTime;
-    }
-
     public Double getDepartureKm() {
         return departureKm;
     }
@@ -144,11 +84,11 @@ public class Trajectory {
         this.departurePlace = departurePlace;
     }
 
-    public Instant getDepartureTime() {
+    public LocalDateTime getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime(Instant departureTime) {
+    public void setDepartureTime(LocalDateTime departureTime) {
         this.departureTime = departureTime;
     }
 

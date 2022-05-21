@@ -13,6 +13,14 @@ public class Type {
     @Column(name = "description", length = 200)
     private String description;
 
+    public Type() {
+    }
+
+    public Type(Integer id, String description) {
+        this.id = id;
+        this.description = description;
+    }
+
     public String getDescription() {
         return description;
     }

@@ -11,7 +11,19 @@
 
     <!-- Title Page-->
     <title>Back office | Gestion de vehicules</title>
-
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    $("#btnPrint").live("click", function () {
+      var divContents = $("#text").html();
+      var printWindow = window.open('', '', 'height=400,width=800');
+      printWindow.document.write('<html><head><title>Html to PDF</title>');
+      printWindow.document.write('</head><body >');
+      printWindow.document.write(document.getElementById('text').innerHTML);
+      printWindow.document.write('</body></html>');
+      printWindow.document.close();
+      printWindow.print();
+    });
+  </script>
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
@@ -294,34 +306,7 @@
         <!-- PAGE CONTENT-->
         <div class="page-content--bgf7">
             <!-- BREADCRUMB-->
-            <section class="au-breadcrumb2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="au-breadcrumb-content">
-                                <div class="au-breadcrumb-left">
-                                    <span class="au-breadcrumb-span">You are here:</span>
-                                    <ul class="list-unstyled list-inline au-breadcrumb__list">
-                                        <li class="list-inline-item active">
-                                            <a href="#">Home</a>
-                                        </li>
-                                        <li class="list-inline-item seprate">
-                                            <span>/</span>
-                                        </li>
-                                        <li class="list-inline-item">Dashboard</li>
-                                    </ul>
-                                </div>
-                                <form class="au-form-icon--sm" action="" method="post">
-                                    <input class="au-input--w300 au-input--style2" type="text" placeholder="Search for datas &amp; reports...">
-                                    <button class="au-btn--submit2" type="submit">
-                                        <i class="zmdi zmdi-search"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
             <!-- END BREADCRUMB-->
 
             <!-- WELCOME-->
@@ -340,13 +325,14 @@
             <!-- END WELCOME-->
 
 
-
+            <form id="form1">
+                <div id="text">
             <!-- DATA TABLE-->
             <section class="p-t-20">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="title-5 m-b-35">Liste de toutes les informations enregistrées</h3>
+                            <h3 class="title-5 m-b-35">Historique des trajets du vehicule : <span th:text="${number}"></span></h3>
                             <div class="table-data__tool">
                                 <div class="table-data__tool-left">
                                     <div class="rs-select2--light rs-select2--md">
@@ -361,8 +347,6 @@
                                 <div class="table-data__tool-right">
                                     <a href="/form-vehicle"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                         <i class="zmdi zmdi-plus"></i>Ajouter</button></a>
-                                    <a href="/form-pdf"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                        Historique des trajets</button></a>
 
                                 </div>
                             </div>
@@ -370,25 +354,26 @@
                                 <table class="table table-data2">
                                     <thead>
                                         <tr>
-                                            <th>Numero</th>
-                                            <th>Expiration assurance</th>
+                                            <th>Motif</th>
+                                            <th>Date et heure du depart</th>
+                                            <th>Emplacement de depart</th>
+                                            <th>Kilometrage au depart</th>
+                                            <th>Destination</th>
+                                            <th>Kilometrage a l'arrivée</th>
+                                            <th>Prix du carburant</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <th:block th:each="list : ${lists}">
                                         <tr class="tr-shadow">
 
-                                            <td th:text="${list.numbervehicle}"><span class="block-email"></span></td>
-                                            <td th:text="${list.expiration}" ></td>
-
-                                            <td>
-                                                <div class="table-data-feature">
-
-                                                    <a th:href="@{'/form-assurance?id=' + ${list.id}}"><button class="item" data-toggle="tooltip" data-placement="top" title="Mise à jour">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button></a>
-                                                </div>
-                                            </td>
+                                            <td th:text="${list.motif}"><span class="block-email"></span></td>
+                                            <td th:text="${list.departureTime}" ></td>
+                                            <td th:text="${list.departurePlace}" ></td>
+                                            <td th:text="${list.arrivalKm}" ></td>
+                                            <td th:text="${list.arrivalPlace}" ></td>
+                                            <td th:text="${list.arrivalKm}" ></td>
+                                            <td th:text="${list.fuelPrice}" ></td>
                                         </tr>
                                         <tr class="spacer"></tr>
                                     </th:block>
@@ -400,6 +385,9 @@
                 </div>
             </section>
             <!-- END DATA TABLE-->
+                </div>
+                <input type="button" value="Print Div Contents" id="btnPrint" />
+            </form>
 
             <!-- COPYRIGHT-->
             <section class="p-t-60 p-b-20">

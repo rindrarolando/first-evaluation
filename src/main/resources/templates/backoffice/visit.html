@@ -351,8 +351,8 @@
                                 <div class="table-data__tool-left">
                                     <div class="rs-select2--light rs-select2--md">
                                         <select class="js-select2" onchange="location = this.value;">
-                                            <option selected="selected">Assurance</option>
-                                            <option value="/visit">Visite</option>
+                                            <option selected="selected">Visit</option>
+                                            <option value="/acceuil">Assurance</option>
                                         </select>
                                         <div class="dropDownSelect2"></div>
                                     </div>
@@ -371,7 +371,7 @@
                                     <thead>
                                         <tr>
                                             <th>Numero</th>
-                                            <th>Expiration assurance</th>
+                                            <th>Expiration visite technique</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -379,12 +379,12 @@
                                         <tr class="tr-shadow">
 
                                             <td th:text="${list.numbervehicle}"><span class="block-email"></span></td>
-                                            <td th:text="${list.expiration}" ></td>
+                                            <td th:text="${list.nextVisit}" ></td>
 
                                             <td>
                                                 <div class="table-data-feature">
 
-                                                    <a th:href="@{'/form-assurance?id=' + ${list.id}}"><button class="item" data-toggle="tooltip" data-placement="top" title="Mise à jour">
+                                                    <a th:href="@{'/form-visit?id=' + ${list.id}}"><button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                         <i class="zmdi zmdi-edit"></i>
                                                     </button></a>
                                                 </div>

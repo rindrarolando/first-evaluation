@@ -10,7 +10,7 @@
     <meta name="description" content="">
 
     <!-- Title Page-->
-    <title>Back office | Gestion de vehicules</title>
+    <title>Trajet en cours</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -42,28 +42,28 @@
             <div class="section__content section__content--p35">
                 <div class="header3-wrap">
                     <div class="header__logo">
-                        <a href="/acceuil-backoffice">
+                        <a href="/acceuil">
                             <img src="images/icon/logo-white.png" alt="CoolAdmin" />
                         </a>
                     </div>
                     <div class="header__navbar">
                         <ul class="list-unstyled">
                             <li class="has-sub">
-                                <a href="/form-vehicle">
-                                    <i class="fas fa-tachometer-alt"></i>Ajouter un vehicule
+                                <a href="/acceuil">
+                                    <i class="fas fa-tachometer-alt"></i>Ajouter un trajet
                                     <span class="bot-line"></span>
                                 </a>
 
                             </li>
                             <li>
-                                <a href="/form-assurance">
+                                <a href="">
                                     <i class="fas fa-shopping-basket"></i>
-                                    <span class="bot-line"></span>Ajouter une assurance</a>
+                                    <span class="bot-line"></span></a>
                             </li>
                             <li>
-                                <a href="/form-visit">
+                                <a href="">
                                     <i class="fas fa-trophy"></i>
-                                    <span class="bot-line"></span>Ajouter une visite</a>
+                                    <span class="bot-line"></span></a>
                             </li>
 
 
@@ -144,20 +144,20 @@
                     <ul class="navbar-mobile__list list-unstyled">
 
                         <li>
-                            <a href="/form-vehicle">
-                                <i class="fas fa-tachometer-alt"></i>Ajouter un vehicule
+                            <a href="/acceuil">
+                                <i class="fas fa-tachometer-alt"></i>Ajouter un trajet
                                 <span class="bot-line"></span>
                             </a>
                         </li>
                         <li>
-                            <a href="/form-assurance">
-                                <i class="fas fa-shopping-basket">Ajouter une assurance</i>
+                            <a href="">
+                                <i class="fas fa-shopping-basket"></i>
                                 <span class="bot-line"></span>
                             </a>
                         </li>
                         <li>
-                            <a href="/form-visit">
-                                <i class="fas fa-trophy">Ajouter une visite</i>
+                            <a href="">
+                                <i class="fas fa-trophy"></i>
                                 <span class="bot-line"></span>
                             </a>
                         </li>
@@ -261,9 +261,9 @@
                                 </div>
                                 <div class="content">
                                     <h5 class="name">
-                                        <a href="#">john doe</a>
+                                        <a href="#">USER</a>
                                     </h5>
-                                    <span class="email">johndoe@example.com</span>
+                                    <span class="email">connected</span>
                                 </div>
                             </div>
                             <div class="account-dropdown__body">
@@ -271,17 +271,10 @@
                                     <a href="#">
                                         <i class="zmdi zmdi-account"></i>Account</a>
                                 </div>
-                                <div class="account-dropdown__item">
-                                    <a href="#">
-                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                </div>
-                                <div class="account-dropdown__item">
-                                    <a href="#">
-                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                </div>
+
                             </div>
                             <div class="account-dropdown__footer">
-                                <a href="/logout">
+                                <a href="/logout-user">
                                     <i class="zmdi zmdi-power"></i>Logout</a>
                             </div>
                         </div>
@@ -300,15 +293,15 @@
                         <div class="col-md-12">
                             <div class="au-breadcrumb-content">
                                 <div class="au-breadcrumb-left">
-                                    <span class="au-breadcrumb-span">You are here:</span>
+                                    <span class="au-breadcrumb-span">:</span>
                                     <ul class="list-unstyled list-inline au-breadcrumb__list">
                                         <li class="list-inline-item active">
-                                            <a href="#">Home</a>
+                                            <a href="#"></a>
                                         </li>
                                         <li class="list-inline-item seprate">
                                             <span>/</span>
                                         </li>
-                                        <li class="list-inline-item">Dashboard</li>
+                                        <li class="list-inline-item"></li>
                                     </ul>
                                 </div>
                                 <form class="au-form-icon--sm" action="" method="post">
@@ -329,8 +322,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="title-4">Welcome
-                                <span>Admin</span>
+                            <h1 class="title-4">
+                                <span></span>
                             </h1>
                             <hr class="line-seprate">
                         </div>
@@ -346,23 +339,18 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="title-5 m-b-35">Liste de toutes les informations enregistrées</h3>
+                            <h3 class="title-5 m-b-35">Trajet à finir</h3>
                             <div class="table-data__tool">
                                 <div class="table-data__tool-left">
                                     <div class="rs-select2--light rs-select2--md">
-                                        <select class="js-select2" onchange="location = this.value;">
-                                            <option selected="selected">Assurance</option>
-                                            <option value="/visit">Visite</option>
-                                        </select>
+
                                         <div class="dropDownSelect2"></div>
                                     </div>
 
                                 </div>
                                 <div class="table-data__tool-right">
-                                    <a href="/form-vehicle"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                    <a href="/acceuil"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                         <i class="zmdi zmdi-plus"></i>Ajouter</button></a>
-                                    <a href="/form-pdf"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                        Historique des trajets</button></a>
 
                                 </div>
                             </div>
@@ -370,23 +358,26 @@
                                 <table class="table table-data2">
                                     <thead>
                                         <tr>
-                                            <th>Numero</th>
-                                            <th>Expiration assurance</th>
+                                            <th>Moment de depart</th>
+                                            <th>Depart</th>
+                                            <th>Motif</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <th:block th:each="list : ${lists}">
                                         <tr class="tr-shadow">
 
-                                            <td th:text="${list.numbervehicle}"><span class="block-email"></span></td>
-                                            <td th:text="${list.expiration}" ></td>
+                                            <td th:text="${list.departureTime}"><span class="block-email"></span></td>
+                                            <td th:text="${list.departurePlace}"></td>
+                                            <td class="desc" th:text="${list.motif}"></td>
 
                                             <td>
                                                 <div class="table-data-feature">
 
-                                                    <a th:href="@{'/form-assurance?id=' + ${list.id}}"><button class="item" data-toggle="tooltip" data-placement="top" title="Mise à jour">
+                                                    <a th:href="@{'/form-arrival?id=' + ${list.id}}"><button class="item" data-toggle="tooltip" data-placement="top" title="Arrivée">
                                                         <i class="zmdi zmdi-edit"></i>
                                                     </button></a>
+
                                                 </div>
                                             </td>
                                         </tr>

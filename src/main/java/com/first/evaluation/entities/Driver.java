@@ -20,6 +20,28 @@ public class Driver {
     @Column(name = "birth")
     private LocalDate birth;
 
+    @Column(name = "login")
+    private String login;
+
+    public Driver() {
+    }
+
+    public Driver(Integer id, String name, String password, LocalDate birth, String login) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.birth = birth;
+        this.login = login;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
     public LocalDate getBirth() {
         return birth;
     }
